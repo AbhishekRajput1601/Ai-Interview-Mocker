@@ -6,7 +6,24 @@ export const MockInterview = pgTable('mockInterview',{
     jobPosition : varchar('jobPosition').notNull(),
     jobDes : varchar('jobDes').notNull(),
     jobExperience : varchar('jobExperience').notNull(),
-    createdBy : varchar('createdAt').notNull(),
+    createdBy : varchar('createdBy').notNull(),
     createdAt : varchar('createdAt'),
     mockId : varchar('mockId').notNull()
-} )
+} );
+
+export const UserAnswer = pgTable('userAnswer',{
+   id : serial('id').primaryKey(),
+   mockIdRef : varchar('mockId').notNull(),
+   question : varchar('question').notNull(),
+   correctAns : varchar('correctAns'),
+   userAns : text('userAns'),
+   feedback : text('feedback'),
+   rating : varchar('rating'),
+   userEmail : varchar('userEmail'),
+   createdAt : varchar('createdAt'),
+});
+
+export const schema = {
+    MockInterview,
+    UserAnswer
+};
