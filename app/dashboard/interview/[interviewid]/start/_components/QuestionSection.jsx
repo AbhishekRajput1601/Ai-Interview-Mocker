@@ -2,6 +2,7 @@ import { Lightbulb, Volume2 } from 'lucide-react'
 import React, { useState } from 'react'
 
 function QuestionSection({mockInterviewQuestion, activeQuestionIndex}) {
+  
   const [isSpeaking, setIsSpeaking] = useState(false);
   const speechSynthesis = window.speechSynthesis;
 
