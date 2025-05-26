@@ -100,7 +100,7 @@ try {
   return (
     <div>
       <div
-        className="p-10 border rounded-lg bg-secondary hover:scale-105 hover:shadow-md 
+        className="p-16 border rounded-lg bg-secondary hover:scale-105 hover:shadow-md 
                     transform cursor-pointer transition-all w-96"
         onClick={() => setOpenDialog(true)}
       >
