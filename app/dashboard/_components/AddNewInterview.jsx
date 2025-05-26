@@ -40,7 +40,7 @@ function AddNewInterview() {
     e.preventDefault();
     console.log(jobPosition, jobDesc, jobExperience);
 
-    const InputPrompt =
+   const InputPrompt =
       "Job Position : " +
       jobPosition +
       ", " +
@@ -55,13 +55,20 @@ function AddNewInterview() {
       " interview question with answer in json format, " +
       "give question and answer in field as JSON format";
 
-    const result = await chatSession.sendMessage(InputPrompt);
-    const MockJsonResponce = result.response
-      .text()
-      .replace("```json", "")
-      .replace("```", "");
-    console.log(JSON.parse(MockJsonResponce));
-    setJsonResponce(MockJsonResponce);
+const result = await chatSession.sendMessage(InputPrompt);
+const MockJsonResponce = result.response
+  .text()
+  .replace("```json", "")
+  .replace("```", "")
+  .trim();
+
+try {
+  const parsed = JSON.parse(MockJsonResponce);
+  console.log(parsed);
+  setJsonResponce(MockJsonResponce);
+} catch (err) {
+  console.error("Failed to parse AI response as JSON", err);
+}
 
     if (MockJsonResponce) {
       const response = await db
