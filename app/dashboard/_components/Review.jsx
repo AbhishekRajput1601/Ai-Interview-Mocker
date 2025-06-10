@@ -1,12 +1,14 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 
 const Review = () => {
   return (
     <div className="p-6  mt-6">
       <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Share Your Experience</h2>
-        
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+          Share Your Experience
+        </h2>
+
         <form className="space-y-4">
           {/* Rating */}
           <div>
@@ -15,7 +17,7 @@ const Review = () => {
             </label>
             <div className="flex gap-2">
               {[1, 2, 3, 4, 5].map((star) => (
-                <span 
+                <span
                   key={star}
                   className="text-2xl cursor-pointer text-yellow-400"
                 >

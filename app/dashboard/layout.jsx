@@ -1,18 +1,17 @@
-import React from 'react'
-import Header from './_components/Header'
-import { Toaster } from '@/components/ui/sonner'
+import React from "react";
+import Header from "./_components/Header";
+import { Toaster } from "@/components/ui/sonner";
 
-function DashboardLayout({children}) {
+function DashboardLayout({ children }) {
   return (
-    <div> 
-       <Header/>
-      <div className='mx-5 md:mx-20 lg:mx36'>
-       <Toaster/>
+    <div>
+      <Header />
+      <div className="mx-5 md:mx-20 lg:mx36">
+        <Toaster />
         {children}
-
       </div>
     </div>
-  )
+  );
 }
 
-export default DashboardLayout
+export default DashboardLayout;
